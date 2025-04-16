@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Models</title>
+</head>
+<body>
+    <h1>Prediction Models</h1>
+
+    <div>
+        <h2>Cancer Prediction</h2>
+        <input type="text" id="cancerFeatures" placeholder="Enter features (comma-separated)" />
+        <button onclick="predictCancer()">Predict Cancer</button>
+        <p id="cancerResult"></p>
+    </div>
+
+    <div>
+        <h2>Breast Prediction</h2>
+        <input type="text" id="diabetesFeatures" placeholder="Enter features (comma-separated)" />
+        <button onclick="predictDiabetes()">Predict Diabetes</button>
+        <p id="diabetesResult"></p>
+    </div>
+
+    <script>
+        // Function to send prediction request for Cancer model
+        function predictCancer() {
+            const features = document.getElementById('cancerFeatures').value.split(',').map(Number);
+            
+            fetch('http://localhost:5000/predict/cancer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ features: features })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cancerResult').innerText = 'Prediction: ' + data.prediction;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Function to send prediction request for Diabetes model
+        function predictDiabetes() {
+            const features = document.getElementById('diabetesFeatures').value.split(',').map(Number);
+            
+            fetch('http://localhost:5000/predict/diabetes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ features: features })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('diabetesResult').innerText = 'Prediction: ' + data.prediction;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

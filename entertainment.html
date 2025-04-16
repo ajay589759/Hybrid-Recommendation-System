@@ -1,0 +1,407 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTERTAINMENT prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">HPM</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900"><a href="index.html">HOME</a>
+            <a class="mr-5 hover:text-gray-900" href="about.html">ABOUT</a>
+            <select name="menu" id="menu">
+                <option value="home">PREDICTION MODELS</option>
+                <option value="health.html">Health prediction</option>
+                <option value="shopping.html">Online Shopping</option>
+                <option value="social.html">Social Meadia</option>
+                <option value="sport.html">Sports predictions</option>
+                <option value="entertainment.html">Entertainment</option>
+                <option value="Natural_disaster.html">Natural Disaster</option>
+              </select><br> 
+              <a class="mr-5 hover:text-gray-900">HOW it's WORK</a>
+              <a class="mr-5 hover:text-gray-900" href="contact.html">CONTACT US</a>
+          </nav>
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img class="object-cover object-center rounded" alt="hero" src="./HPM pics/ent.svg">">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">ENTERTAINMENT prediction
+            </h1>
+            <p class="mb-8 leading-relaxed">An entertainment prediction model is a machine learning system designed to forecast trends, preferences, or outcomes in areas like movies, music, TV shows, or online content. Its goal is to predict things such as box office success, song popularity, show ratings, or even which content a user is most likely to enjoy or engage with. These models are widely used by streaming platforms (like Netflix, Spotify, or YouTube), movie studios, and entertainment analytics companies.</p>
+            <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="https://beamdata.ai/machine-learning-in-entertainment-customizing-movie-recommendations/">Learn More</a></button>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">ENTERTAINMENT prediction</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">These models help companies make data-driven decisions—like which projects to greenlight, what content to recommend, or how to personalize user experiences. When well-designed, they combine audience behavior with creative insights to better predict success in the fast-changing world of entertainment.</p>
+            <div class="flex mt-6 justify-center">
+              <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/webseries.jpg">Webseries recommendation</h2>
+                <p class="leading-relaxed text-base">A web series recommendation model is a machine learning system designed to suggest personalized web series to users based on their viewing history, preferences, and content features. It's commonly used by streaming platforms like Netflix, Amazon Prime, or Disney+ to keep users engaged by recommending shows they'll likely enjoy.</p>
+                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onclick="getwebPrediction()"><a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><a href="http://localhost:8511">Predict </a></a>
+                <script>
+                  async function getwebPrediction() {
+                    
+                      let response = await fetch("http://localhost:8511", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(inputData)
+                      });
+                      let result = await response.json();
+                      alert("Prediction: " + result.prediction);  // Show result in an alert
+                  }
+                  </script>
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/movie1.jpg">Movie recommendation Model</h2>
+                <p class="leading-relaxed text-base">A movie recommendation model is a machine learning system designed to suggest films to users based on their preferences, viewing history, and movie characteristics. It’s widely used by streaming platforms like Netflix, Hulu, and Hotstar to personalize content and improve user engagement.</p>
+                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onclick="getmoviePrediction()"><a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><a href="http://localhost:8512">Predict </a></a>
+                <script>
+                  async function getmoviePrediction() {
+                    
+                      let response = await fetch("http://localhost:8512", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(inputData)
+                      });
+                      let result = await response.json();
+                      alert("Prediction: " + result.prediction);  // Show result in an alert
+                  }
+                  </script>
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/music.jpg">Music Recommenadation model</h2>
+                <p class="leading-relaxed text-base">A music recommendation model is a machine learning system designed to suggest songs, albums, or artists to users based on their listening history, preferences, and music features. It’s widely used by platforms like Spotify, Apple Music, and YouTube Music to personalize the user experience and increase engagement.</p>
+                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onclick="getmusicPrediction()"><a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><a href="http://localhost:8513">Predict </a></a>
+                <script>
+                  async function getmusicPrediction() {
+                    
+                      let response = await fetch("http://localhost:8513", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(inputData)
+                      });
+                      let result = await response.json();
+                      alert("Prediction: " + result.prediction);  // Show result in an alert
+                  }
+                  </script>
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <footer class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+              <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">HPM</span>
+              </a>
+              <p class="mt-2 text-sm text-gray-500">A combination of all prediction models</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Contact Information</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Email address</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Phone number</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Contact form link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Physical address (if applicable)</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Media Icons</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Links to platforms like Facebook</a>
+                  </li>
+              
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Quick Links</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Home</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">About</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Services</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Blog</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> Legal Information</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Terms & Conditions</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Cookie Policy</a>
+                  </li>
+                
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+              <p class="text-gray-500 text-sm text-center sm:text-left">© 2025 Hybrid Prediction Model
+                <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank"></a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </footer>
+      </section>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span class="ml-3 text-xl">HPM</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="index.html">HOME</a>
+        <a class="mr-5 hover:text-gray-900" href="about.html">ABOUT</a>
+        <select id="options" onchange="navigatePage()" class="mr-5 px-2 py-1 border rounded">
+          <option value="home">PREDICTION MODELS</option>
+          <option value="health.html">Health prediction</option>
+          <option value="shopping.html">Online Shopping</option>
+          <option value="social.html">Social Media</option>
+          <option value="sport.html">Sports predictions</option>
+          <option value="entertainment.html">Entertainment</option>
+          <option value="Natural_disaster.html">Natural Disaster</option>
+        </select>
+        <a class="mr-5 hover:text-gray-900">HOW it WORKS</a>
+        <a class="mr-5 hover:text-gray-900" href="contact.html">CONTACT US</a>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Main Section -->
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded" alt="hero" src="./HPM pics/ent.svg">
+            </div>
+            <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Entertainment Prediction</h1>
+                <p class="mb-8 leading-relaxed">An entertainment prediction model uses machine learning to forecast trends, preferences, or outcomes in areas like movies, music, TV shows, and more. These models help streaming platforms personalize content recommendations, forecast the success of a movie or song, and enhance user engagement.</p>
+                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="https://beamdata.ai/machine-learning-in-entertainment-customizing-movie-recommendations/">Learn More</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prediction Models Section -->
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Entertainment Prediction Models</h1>
+                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">These models predict trends, user preferences, and content success in entertainment, ranging from movies to music. They are crucial for streaming platforms like Netflix, Spotify, and others to recommend personalized content to users.</p>
+                <div class="flex mt-6 justify-center">
+                    <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+                </div>
+            </div>
+            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+                <!-- Web Series Recommendation Model -->
+                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/webseries.jpg" alt="Web Series Recommendation">Web Series Recommendation</h2>
+                        <p class="leading-relaxed text-base">A web series recommendation model suggests series to users based on their viewing habits. Commonly used by platforms like Netflix, Prime Video, and Disney+.</p>
+                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href="http://localhost:8511">Predict</a>
+                    </div>
+                </div>
+                <!-- Movie Recommendation Model -->
+                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                            <circle cx="6" cy="6" r="3"></circle>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/movie1.jpg" alt="Movie Recommendation">Movie Recommendation Model</h2>
+                        <p class="leading-relaxed text-base">A movie recommendation model suggests films to users based on their preferences, similar movies, and genres, widely used by platforms like Netflix and Hulu.</p>
+                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href="http://localhost:8512">Predict</a>
+                    </div>
+                </div>
+                <!-- Music Recommendation Model -->
+                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3"><img src="./HPM pics/music.jpg" alt="Music Recommendation">Music Recommendation Model</h2>
+                        <p class="leading-relaxed text-base">A music recommendation model predicts songs or artists a user may enjoy, based on their listening history, popular trends, and content features.</p>
+                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href="http://localhost:8513">Predict</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-gray-600 body-font bg-indigo-100">
+        <div class="container px-5 py-24 mx-auto flex items-center sm:flex-row flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">HPM</span>
+                </a>
+                <p class="mt-2 text-sm text-gray-500">A combination of all prediction models</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Contact Information</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Email address</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Phone number</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+      <!-- JS Function for Select Navigation -->
+  <script>
+    function navigatePage() {
+      const value = document.getElementById("options").value;
+      if (value !== "home") window.location.href = value;
+    }
+  </script>
+
+</body>
+</html>
